@@ -8,10 +8,10 @@ import dragonFly from '../images/dragonFly.jpg';
 export default class BugList extends Component {
   state = {
     bugs: {
-      butterfly: { timesCaught: 0, img: { butterfly } },
-      ladybird: { timesCaught: 0, img: { ladybird } },
-      snail: { timesCaught: 0, img: { snail } },
-      dragonfly: { timesCaught: 0, img: { dragonFly } },
+      butterfly: { timesCaught: 0, img: butterfly },
+      ladybird: { timesCaught: 0, img: ladybird },
+      snail: { timesCaught: 0, img: snail },
+      dragonfly: { timesCaught: 0, img: dragonFly },
     },
   };
   render() {
