@@ -1,11 +1,12 @@
 import React from 'react';
-import ladybird from '../images/ladybird.jpg';
 
-function BugCard() {
+function BugCard(props) {
   return (
     <section>
-      <h2>insect</h2>
-      <img src={ladybird} alt="red ladybird" />
+      <h2>{props.bugName}</h2>
+      <img src={props.img} alt={props.bugName} />
+      <p> Times caught: {props.timesCaught}</p>
+      <button>Caught You!</button>
     </section>
   );
 }
