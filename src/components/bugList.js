@@ -20,9 +20,30 @@ export default class BugList extends Component {
     return (
       <main>
         {bugsArray.map(([name, data]) => {
-          return <BugCard key={name} bugName={name} {...data} />;
+          return (
+            <BugCard
+              key={name}
+              bugName={name}
+              {...data}
+              incrementBugCount={this.incrementBugCount}
+            />
+          );
         })}
       </main>
     );
   }
+
+  incrementBugCount = (caughtBug) => {
+    this.setState((currentState) => {
+      return {
+        bugs: {
+          ...currentState.bugs,
+          [caughtBug]: {
+            ...currentState.bugs[caughtBug],
+            timesCaught: currentState.bugs[caughtBug].timesCaught + 1,
+          },
+        },
+      };
+    });
+  };
 }
